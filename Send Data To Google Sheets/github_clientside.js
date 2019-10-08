@@ -117,7 +117,7 @@ async function getDetails() {
 
   var rearr = await getProfile();
   var langs = rearr[1];
-  var email = email_elm ? email_elm : unq(rearr[0]); /*check to see if we got the email from the HTML or from the patch. If HTML, use that, else use the patch email*/
+  var email = email_elm ? email_elm : rearr[0]; /*check to see if we got the email from the HTML or from the patch. If HTML, use that, else use the patch email*/
 
   var detail = {
     fullname: cn(document, 'vcard-fullname')[0] ? cn(document, 'vcard-fullname')[0].innerText : '',
